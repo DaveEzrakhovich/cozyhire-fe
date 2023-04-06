@@ -16,7 +16,7 @@ function WelcomeSection(props: WelcomeSectionProps) {
     };
 
     return (
-        <section className="section-1">
+        <section id="welcome-section" className="section-1">
             <h1>Welcome to CozyHire</h1>
             <p>Instead of searching for jobs, let them search after you</p>
             {props.loggedIn ? (
@@ -28,7 +28,7 @@ function WelcomeSection(props: WelcomeSectionProps) {
             ) : (
                 <button onClick={() => setShowLoginOverlay(true)}>Login / Sign up</button>
             )}
-            <div className="scroll-down">
+            <div className="welcome-scroll-down">
                 <a href="#about-section">
                     <i className="fa fa-angle-down"></i>
                 </a>
