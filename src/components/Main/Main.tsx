@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import AboutUsSection from './LandingPage/AboutUsSection';
 import WelcomeSection from './LandingPage/WelcomeSection';
 import AnonymousSection from './LandingPage/AnonymousSection';
-import Scroller from '../Scroller';
+import AddScrollArrow from "../Scroller";
 
 function Main(props: {
     loggedIn: boolean;
@@ -24,11 +24,11 @@ function Main(props: {
                 onLoginClick={props.onLoginClick}
                 onLogoutClick={handleLogoutClick}
             />
-            <Scroller direction="down" targetSectionId="about-section" />
-            <Scroller direction="up" targetSectionId="welcome-section" />
+            <AddScrollArrow direction="down" sectionId="about-section" key="about-down" />
+            <AddScrollArrow direction="up" sectionId="welcome-section" key="about-up" />
             <AboutUsSection />
-            <Scroller direction="down" targetSectionId="anonymous-section" />
-            <Scroller direction="up" targetSectionId="about-section" />
+            <AddScrollArrow direction="down" sectionId="anonymous-section" key="anon-down" />
+            <AddScrollArrow direction="up" sectionId="about-section" key="anon-up" />
             <AnonymousSection />
         </main>
     );
