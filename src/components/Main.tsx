@@ -1,4 +1,5 @@
 import React from 'react';
+import '../style.css';
 import AboutUsSection from './LandingPage/AboutUsSection';
 import WelcomeSection from './LandingPage/WelcomeSection';
 import AnonymousSection from './LandingPage/AnonymousSection';
