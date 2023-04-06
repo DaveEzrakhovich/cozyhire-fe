@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import LoginOverlay from '../components/LoginOverlay';
+import Header from '../components/Main/Header';
+import Footer from '../components/Main/Footer';
+import LoginOverlay from '../components/Main/LoginOverlay';
 import './LandingPage.css';
 
 interface LandingPageProps {

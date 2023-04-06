@@ -1,16 +1,16 @@
 import React from 'react';
 
-interface ScrollArrowProps {
+interface ScrollerProps {
     direction: 'up' | 'down';
-    sectionId: string;
+    targetSectionId: string;
 }
 
-function ScrollArrow({ direction, sectionId }: ScrollArrowProps) {
+function Scroller({ direction, targetSectionId }: ScrollerProps) {
     const iconClass = `fa fa-angle-${direction}`;
     const scrollFunc = () => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
+        const targetSection = document.getElementById(targetSectionId);
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
@@ -21,4 +21,4 @@ function ScrollArrow({ direction, sectionId }: ScrollArrowProps) {
     );
 }
 
-export default ScrollArrow;
+export default Scroller;
