@@ -1,24 +1,34 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
-import Main from './components/Main'
-// import JobsPage from './pages/JobsPage';
+import Main from './components/Main';
 import Footer from './components/Footer';
 import LoginOverlay from './components/LoginOverlay';
-import './App.css';
 
 function App() {
     const [showLoginOverlay, setShowLoginOverlay] = useState(false);
-    const onLoginClick = () => setShowLoginOverlay(true);
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    function handleLoginClick() {
+        setShowLoginOverlay(true);
+    }
+
+    function handleLogoutClick() {
+        setLoggedIn(false);
+    }
+
+    function handleLoginSuccess() {
+        setLoggedIn(true);
+        setShowLoginOverlay(false);
+    }
 
     return (
         <>
-            <Header onLoginClick={onLoginClick} />
-            <Main loggedIn={false} onLoginClick={onLoginClick} />
+            <Header loggedIn={loggedIn} onLoginClick={handleLoginClick} onLogoutClick={handleLogoutClick} />
+            <Main loggedIn={loggedIn} onLoginSuccess={handleLoginSuccess} onLoginClick={handleLoginClick} />
             <Footer />
             <LoginOverlay show={showLoginOverlay} onClose={() => setShowLoginOverlay(false)} />
         </>
     );
 }
-
 
 export default App;

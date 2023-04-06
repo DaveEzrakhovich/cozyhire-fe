@@ -1,18 +1,29 @@
 import React from 'react';
-import '../style.css';
 
 interface HeaderProps {
+    loggedIn: boolean;
     onLoginClick: () => void;
+    onLogoutClick: () => void;
 }
 
-function Header({ onLoginClick }: HeaderProps) {
+function Header({ loggedIn, onLoginClick, onLogoutClick }: HeaderProps) {
     return (
         <header className="Header">
             <div className="Header__logo">CozyHire</div>
             <nav>
                 <ul className="Header__menu">
-                    <li><a href="#">Our Mission</a></li>
-                    <li><button onClick={onLoginClick}>Sign Up / Log In</button></li>
+                    <li>
+                        <a href="#">Our Mission</a>
+                    </li>
+                    {loggedIn ? (
+                        <li>
+                            <button onClick={onLogoutClick}>Logout</button>
+                        </li>
+                    ) : (
+                        <li>
+                            <button onClick={onLoginClick}>Login / Sign Up</button>
+                        </li>
+                    )}
                 </ul>
             </nav>
         </header>

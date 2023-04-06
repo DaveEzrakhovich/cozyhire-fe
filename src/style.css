@@ -1,3 +1,51 @@
+/* FontAwesome Icons */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
+
+/* Scroll Down Arrow */
+.fa-angle-down {
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-down 1s infinite;
+}
+
+@keyframes scroll-down {
+    0% {
+        transform: translate(-50%, 0);
+    }
+    50% {
+        transform: translate(-50%, 1rem);
+    }
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+
+.fa-angle-up {
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-up 1s infinite;
+}
+
+@keyframes scroll-up {
+    0% {
+        transform: translate(-50%, 0);
+    }
+    50% {
+        transform: translate(-50%, 1rem);
+    }
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+
 * {
     box-sizing: border-box;
 }

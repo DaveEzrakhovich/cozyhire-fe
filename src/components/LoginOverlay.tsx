@@ -1,26 +1,29 @@
 import React from 'react';
+import { FaGoogle, FaMicrosoft, FaApple } from 'react-icons/fa';
 
-type LoginOverlayProps = {
+interface SocialLoginOverlayProps {
     show: boolean;
     onClose: () => void;
 }
 
-function LoginOverlay(props: LoginOverlayProps) {
-    const { show, onClose } = props;
+function SocialLoginOverlay({ show, onClose }: SocialLoginOverlayProps) {
+    if (!show) {
+        return null;
+    }
 
     return (
-        <div className={`login-overlay ${show ? 'show' : ''}`}>
-            <div className="login-form">
-                <button className="close-button" onClick={onClose}>
-                    <i className="fa fa-times"></i>
-                </button>
-                <h3>Login</h3>
-                <button className="google-button">Login with Google</button>
-                <button className="microsoft-button">Login with Microsoft</button>
-                <button className="apple-button">Login with Apple</button>
+        <div className="overlay">
+            <div className="overlay-content">
+                <button onClick={onClose}>X</button>
+                <h2>Login with:</h2>
+                <div className="social-buttons">
+                    <button><FaGoogle /> Login with Google</button>
+                    <button><FaMicrosoft /> Login with Microsoft</button>
+                    <button><FaApple /> Login with Apple</button>
+                </div>
             </div>
         </div>
     );
 }
 
-export default LoginOverlay;
+export default SocialLoginOverlay;

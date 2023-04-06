@@ -1,13 +1,16 @@
-import React, {useState} from 'react';
+// WelcomeSection.tsx
+
+import React, { useState } from 'react';
 import LoginOverlay from '../LoginOverlay';
 
 type WelcomeSectionProps = {
     loggedIn: boolean;
     onLoginClick: () => void;
+    onLogoutClick: () => void;
+    onLoginSuccess: () => void;
 }
 
-function WelcomeSection(props: WelcomeSectionProps) {
-    const { loggedIn, onLoginClick } = props;
+function WelcomeSection({ loggedIn, onLoginClick, onLogoutClick }: WelcomeSectionProps) {
     const [showLoginOverlay, setShowLoginOverlay] = useState(false);
 
     return (
@@ -18,9 +21,10 @@ function WelcomeSection(props: WelcomeSectionProps) {
                 <>
                     <button>Browse over open positions</button>
                     <button>Let them chase after me</button>
+                    <button onClick={onLogoutClick}>Logout</button>
                 </>
             ) : (
-                <button onClick={onLoginClick}>Login</button>
+                <button onClick={() => setShowLoginOverlay(true)}>Login / Signup</button>
             )}
             <div className="scroll-down">
                 <a href="#about-section">
