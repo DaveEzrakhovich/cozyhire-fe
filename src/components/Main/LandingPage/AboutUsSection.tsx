@@ -1,6 +1,7 @@
 import React from 'react';
 
 function AboutUsSection() {
+
     return (
         <section id="about-section" className="section-2">
             <div className="center-text">

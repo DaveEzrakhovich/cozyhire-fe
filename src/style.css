@@ -233,3 +233,30 @@ footer {
     padding: 10px;
     text-align: center;
 }
+
+.scroll-arrow {
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.scroll-arrow i {
+    font-size: 2rem;
+}
