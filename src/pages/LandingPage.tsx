@@ -11,7 +11,7 @@ interface LandingPageProps {
 function LandingPage({ onLoginClick }: LandingPageProps) {
     return (
         <>
-            <Header onLoginClick={onLoginClick} />
+            <Header onLoginClick={() => console.log("Login clicked")} onLogoutClick={() => console.log("logOut clicked")} loggedIn={false}/>
             <main>
                 <section className="LandingPage__section">
                     <h1>CozyHire - instead of you chasing your next job, let it chase you!</h1>
@@ -28,7 +28,7 @@ function LandingPage({ onLoginClick }: LandingPageProps) {
                 </section>
             </main>
             <Footer />
-            <LoginOverlay show={false} onClose={() => {}} />
+            <LoginOverlay show={false} onClose={() => {}}  onLoginSuccess={() => {}}/>
         </>
     );
 }

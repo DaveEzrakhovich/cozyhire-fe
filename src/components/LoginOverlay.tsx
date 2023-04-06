@@ -4,6 +4,7 @@ import { FaGoogle, FaMicrosoft, FaApple } from 'react-icons/fa';
 interface SocialLoginOverlayProps {
     show: boolean;
     onClose: () => void;
+    onLoginSuccess: () => void;
 }
 
 function SocialLoginOverlay({ show, onClose }: SocialLoginOverlayProps) {

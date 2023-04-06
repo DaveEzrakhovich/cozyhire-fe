@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 function AboutUsPage() {
     return (
         <>
-            <Header onLoginClick={() => console.log("Login clicked")} />
+            <Header onLoginClick={() => console.log("Login clicked")} onLogoutClick={() => console.log("logOut clicked")} loggedIn={false}/>
             <main>
                 <section>
                     <h1>About Us</h1>

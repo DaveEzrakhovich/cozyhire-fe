@@ -8,25 +8,25 @@ function App() {
     const [showLoginOverlay, setShowLoginOverlay] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
 
-    function handleLoginClick() {
+    const handleLoginClick = () => {
         setShowLoginOverlay(true);
-    }
+    };
 
-    function handleLogoutClick() {
+    const handleLogoutClick = () => {
         setLoggedIn(false);
-    }
+    };
 
-    function handleLoginSuccess() {
+    const handleLoginSuccess = () => {
         setLoggedIn(true);
         setShowLoginOverlay(false);
-    }
+    };
 
     return (
         <>
-            <Header loggedIn={loggedIn} onLoginClick={handleLoginClick} onLogoutClick={handleLogoutClick} />
-            <Main loggedIn={loggedIn} onLoginSuccess={handleLoginSuccess} onLoginClick={handleLoginClick} />
+            <Header onLoginClick={handleLoginClick} onLogoutClick={handleLogoutClick} loggedIn={loggedIn} />
+            <Main loggedIn={loggedIn} onLoginSuccess={handleLoginSuccess} onLoginClick={() => setShowLoginOverlay(true)} onLogoutClick={() => setLoggedIn(false)} />
             <Footer />
-            <LoginOverlay show={showLoginOverlay} onClose={() => setShowLoginOverlay(false)} />
+            <LoginOverlay show={showLoginOverlay} onClose={() => setShowLoginOverlay(false)} onLoginSuccess={handleLoginSuccess} />
         </>
     );
 }
