@@ -24,11 +24,11 @@ function Main(props: {
                 onLoginClick={props.onLoginClick}
                 onLogoutClick={handleLogoutClick}
             />
-            <AddScrollArrow direction="down" sectionId="about-section" key="about-down" />
-            <AddScrollArrow direction="up" sectionId="welcome-section" key="about-up" />
+            <AddScrollArrow direction="down" sectionId="about-section" uid="about-section-scroll-down"/>
+            <AddScrollArrow direction="up" sectionId="welcome-section" uid="about-section-scroll-up"/>
             <AboutUsSection />
-            <AddScrollArrow direction="down" sectionId="anonymous-section" key="anon-down" />
-            <AddScrollArrow direction="up" sectionId="about-section" key="anon-up" />
+            <AddScrollArrow direction="down" sectionId="anonymous-section" uid="anonymous-section-scroll-down" />
+            <AddScrollArrow direction="up" sectionId="about-section" uid="anonymous-section-scroll-up" />
             <AnonymousSection />
         </main>
     );
