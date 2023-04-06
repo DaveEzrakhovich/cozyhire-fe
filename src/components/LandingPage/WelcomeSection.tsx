@@ -28,11 +28,6 @@ function WelcomeSection(props: WelcomeSectionProps) {
             ) : (
                 <button onClick={() => setShowLoginOverlay(true)}>Login / Sign up</button>
             )}
-            <div className="welcome-scroll-down">
-                <a href="#about-section">
-                    <i className="fa fa-angle-down"></i>
-                </a>
-            </div>
             <LoginOverlay
                 show={showLoginOverlay}
                 onClose={() => setShowLoginOverlay(false)}
