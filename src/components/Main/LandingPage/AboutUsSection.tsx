@@ -1,6 +1,4 @@
 import React from 'react';
-import SectionArrow from '../Scroller/SectionArrow';
-import { scrollToElement } from '../../../utils/scoll'
 
 type AboutUsSectionProps = {};
 function AboutUsSection(props: AboutUsSectionProps ) {

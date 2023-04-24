@@ -7,7 +7,7 @@ interface ArrowProps {
     onClick: () => void;
 }
 
-function SectionArrow({ id, arrowDirection, onArrowClick }: SectionArrowProps) {
+export function SectionArrow({ id, arrowDirection, onArrowClick }: SectionArrowProps) {
     const arrowClass = `SectionArrow SectionArrow--${arrowDirection}`;
 
     return (
@@ -19,10 +19,8 @@ function SectionArrow({ id, arrowDirection, onArrowClick }: SectionArrowProps) {
     );
 }
 
-export default SectionArrow;
 
-
-const ArrowLeft = (props: ArrowProps) => {
+export const ArrowLeft = (props: ArrowProps) => {
     const { direction, onClick } = props;
     return (
         <div className={`arrow arrow-${direction}`} onClick={onClick}>
@@ -33,7 +31,7 @@ const ArrowLeft = (props: ArrowProps) => {
     );
 };
 
-const ArrowRight = (props: ArrowProps) => {
+export const ArrowRight = (props: ArrowProps) => {
     const { direction, onClick } = props;
     return (
         <div className={`arrow arrow-${direction}`} onClick={onClick}>
@@ -43,5 +41,3 @@ const ArrowRight = (props: ArrowProps) => {
         </div>
     );
 };
-
-export { ArrowLeft, ArrowRight };
