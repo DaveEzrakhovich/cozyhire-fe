@@ -1,24 +1,14 @@
 import React from 'react';
-import { ArrowDirection } from '../../../types/Scroller/Arrows'
-interface SectionArrowProps {
-    id: string;
-    arrowDirection: ArrowDirection;
-    onArrowClick: () => void;
-    sectionComponent: JSX.Element;
-}
+import {ArrowDirection, SectionArrowProps} from '../../../types/Scroller/SectionArrow';
+import './SectionArrow.css';
 
 function SectionArrow(props: SectionArrowProps) {
+    const arrowClass = `SectionArrow SectionArrow--${props.arrowDirection}`;
+
     return (
-        <div className={`SectionArrow ${props.arrowDirection}`}>
-            <div className="SectionArrow__container" onClick={props.onArrowClick}>
-                <div className="SectionArrow__icon" id={props.id}>
-                    {props.arrowDirection === ArrowDirection.Up ? (
-                        <i className="fas fa-arrow-up" />
-                    ) : (
-                        <i className="fas fa-arrow-down" />
-                    )}
-                </div>
-                <div className="SectionArrow__content">{props.sectionComponent}</div>
+        <div id={props.id} className={arrowClass} onClick={props.onArrowClick}>
+            <div className="SectionArrow__body">
+                <div className="SectionArrow__head" />
             </div>
         </div>
     );

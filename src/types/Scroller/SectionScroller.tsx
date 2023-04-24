@@ -1,11 +1,15 @@
-import {ArrowDirection} from "./Arrows";
+import { SectionArrow } from "./SectionArrow";
 
 export interface Section {
     id: string;
-    arrowDirection: ArrowDirection;
-    onArrowClick: () => void;
-    sectionComponent: JSX.Element;
+    component: JSX.Element;
+    arrowComponents: {
+        up?: SectionArrow;
+        down?: SectionArrow;
+    };
 }
+
+
 
 export interface SectionScrollerProps {
     sections: Section[];

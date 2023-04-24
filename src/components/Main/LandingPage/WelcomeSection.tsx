@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import LoginOverlay from '../LoginOverlay';
 import SectionArrow from '../Scroller/SectionArrow';
 import { scrollToElement } from '../../../utils/scoll'
-import {ArrowDirection} from "../../../types/Scroller/Arrows";
+import {ArrowDirection} from "../../../types/Scroller/SectionArrow";
 
 type WelcomeSectionProps = {
     loggedIn: boolean;

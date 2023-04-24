@@ -4,8 +4,8 @@ import WelcomeSection from './LandingPage/WelcomeSection';
 import AnonymousSection from './LandingPage/AnonymousSection';
 import SectionScroller from './Scroller/SectionScroller';
 import {scrollToElement} from "../../utils/scoll";
-import {ArrowDirection} from "../../types/Scroller/Arrows";
 import {Section} from "../../types/Scroller/SectionScroller";
+
 
 function Main(props: {
     loggedIn: boolean;
@@ -22,9 +22,7 @@ function Main(props: {
     const sections: Section[] = [
         {
             id: 'welcome-section',
-            arrowDirection: ArrowDirection.Down,
-            onArrowClick: () => scrollToElement('about-section'),
-            sectionComponent: (
+            component: (
                 <WelcomeSection
                     loggedIn={props.loggedIn}
                     onLoginSuccess={props.onLoginSuccess}
@@ -32,21 +30,27 @@ function Main(props: {
                     onLogoutClick={handleLogoutClick}
                 />
             ),
-        },
-        {
-            id: 'about-section',
-            arrowDirection: ArrowDirection.Down,
-            onArrowClick: () => scrollToElement('anonymous-section'),
-            sectionComponent: <AboutUsSection />,
+            arrowComponents: {
+                down: <div className="arrow-down" onClick={() => scrollToElement('about-section')}></div>,
+            }
         },
         {
             id: 'anonymous-section',
-            arrowDirection: ArrowDirection.Up,
-            onArrowClick: () => scrollToElement('welcome-section'),
-            sectionComponent: <AnonymousSection />,
+            component: <AnonymousSection />,
+            arrowComponents: {
+                up: <div className="arrow-up" onClick={() => scrollToElement('welcome-section')}></div>,
+                down: <div className="arrow-down" onClick={() => scrollToElement('about-section')}></div>,
+            }
+        },
+        {
+            id: 'about-section',
+            component: <AboutUsSection />,
+            arrowComponents: {
+                up: <div className="arrow-up" onClick={() => scrollToElement('anonymous-section')}></div>,
+                down: <div className="arrow-down" onClick={() => scrollToElement('contact-us-section')}></div>,
+            }
         },
     ];
-
 
 
     return (
