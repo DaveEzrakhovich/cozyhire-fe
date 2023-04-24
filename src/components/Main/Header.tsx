@@ -9,7 +9,7 @@ interface HeaderProps {
 function Header({ loggedIn, onLoginClick, onLogoutClick }: HeaderProps) {
     return (
         <header className="Header">
-            <div className="Header__logo">CozyHire</div>
+            <div className="Header__logo"></div>
             <nav>
                 <ul className="Header__menu">
                     <li>
