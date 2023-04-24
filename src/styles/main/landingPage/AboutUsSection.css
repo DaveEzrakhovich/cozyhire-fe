@@ -1,0 +1,42 @@
+.about-us-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: #005c99;
+}
+
+.about-us-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.about-us-section p {
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.about-us-section ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.about-us-section li {
+    list-style: none;
+    margin: 1rem;
+    text-align: center;
+}
+
+.about-us-section img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}

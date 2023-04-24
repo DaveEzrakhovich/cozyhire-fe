@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './styles/global.css';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

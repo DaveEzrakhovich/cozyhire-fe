@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../styles/header.css';
 
 interface HeaderProps {
     loggedIn: boolean;

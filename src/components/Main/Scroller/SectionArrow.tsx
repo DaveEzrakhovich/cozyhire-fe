@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../styles/main/scroller/SectionScroller.css'
+import '../../../styles/main/scroller/SectionScroller.css';
 import {ArrowDirection, SectionArrowProps} from "../../../types/Scroller/SectionArrow";
 
 interface ArrowProps {

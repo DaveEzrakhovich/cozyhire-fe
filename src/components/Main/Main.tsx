@@ -5,7 +5,10 @@ import AnonymousSection from './LandingPage/AnonymousSection';
 import SectionScroller from './Scroller/SectionScroller';
 import { ArrowLeft, ArrowRight } from "./Scroller/SectionArrow";
 import { ArrowDirection } from "../../types/Scroller/SectionArrow";
+
 import '../../styles/main.css';
+import '../../styles/main/scroller/SectionArrow.css';
+import '../../styles/main/scroller/SectionScroller.css';
 
 function Main(props: {
     loggedIn: boolean;

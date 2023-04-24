@@ -3,7 +3,6 @@ import { Section } from '../../../types/Scroller/SectionScroller';
 import '../../../styles/main/scroller/SectionScroller.css';
 import { SectionArrow } from "./SectionArrow";
 import { ArrowDirection } from "../../../types/Scroller/SectionArrow";
-import '../../../styles/main/scroller/SectionScroller.css';
 
 interface SectionScrollerProps {
     sections: Section[];

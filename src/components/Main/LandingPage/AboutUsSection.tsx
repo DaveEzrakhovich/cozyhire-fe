@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../../styles/main/landingPage/AboutUsSection.css';
 
 type AboutUsSectionProps = {};
 function AboutUsSection(props: AboutUsSectionProps ) {
