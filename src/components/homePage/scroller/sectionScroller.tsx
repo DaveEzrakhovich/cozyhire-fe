@@ -1,8 +1,8 @@
 import React from 'react';
-import { Section } from '../../../types/Scroller/SectionScroller';
-import '../../../styles/main/scroller/SectionScroller.css';
-import { SectionArrow } from "./SectionArrow";
-import { ArrowDirection } from "../../../types/Scroller/SectionArrow";
+import { Section } from '../../../types/scroller/sectionScroller';
+import '../../../styles/main/scroller/sectionScroller.css';
+import { SectionArrow } from "./sectionArrow";
+import { ArrowDirection } from "../../../types/scroller/sectionArrow";
 
 interface SectionScrollerProps {
     sections: Section[];

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import LoginOverlay from '../LoginOverlay';
-import '../../../styles/main/landingPage/WelcomeSection.css';
+import LoginOverlay from '../loginOverlay';
+import '../../../styles/main/landingPage/welcomeSection.css';
 
 type WelcomeSectionProps = {
     loggedIn: boolean;

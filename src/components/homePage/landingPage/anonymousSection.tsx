@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../styles/main/landingPage/AnonymousSection.css';
+import '../../../styles/main/landingPage/anonymousSection.css';
 
 function AnonymousSection() {
     return (

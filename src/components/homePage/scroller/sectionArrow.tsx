@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../../styles/main/scroller/SectionScroller.css';
-import {ArrowDirection, SectionArrowProps} from "../../../types/Scroller/SectionArrow";
+import '../../../styles/main/scroller/sectionScroller.css';
+import {ArrowDirection, SectionArrowProps} from "../../../types/scroller/sectionArrow";
 
 interface ArrowProps {
     direction: ArrowDirection;

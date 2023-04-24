@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
-import AboutUsSection from './LandingPage/AboutUsSection';
-import WelcomeSection from './LandingPage/WelcomeSection';
-import AnonymousSection from './LandingPage/AnonymousSection';
-import SectionScroller from './Scroller/SectionScroller';
-import { ArrowLeft, ArrowRight } from "./Scroller/SectionArrow";
-import { ArrowDirection } from "../../types/Scroller/SectionArrow";
+import AboutUsSection from './landingPage/aboutUsSection';
+import WelcomeSection from './landingPage/welcomeSection';
+import AnonymousSection from './landingPage/anonymousSection';
+import SectionScroller from './scroller/sectionScroller';
+import { ArrowLeft, ArrowRight } from "./scroller/sectionArrow";
+import { ArrowDirection } from "../../types/scroller/sectionArrow";
 
 import '../../styles/main.css';
-import '../../styles/main/scroller/SectionArrow.css';
-import '../../styles/main/scroller/SectionScroller.css';
+import '../../styles/main/scroller/sectionArrow.css';
+import '../../styles/main/scroller/sectionScroller.css';
 
 function Main(props: {
     loggedIn: boolean;
