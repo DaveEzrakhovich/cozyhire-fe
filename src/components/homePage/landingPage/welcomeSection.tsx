@@ -17,7 +17,7 @@ function WelcomeSection(props: WelcomeSectionProps) {
     };
 
     return (
-        <section id="welcome-section" className="section-1">
+        <section id="welcome-section" className="welcome-section">
             <h1>Welcome to CozyHire</h1>
             <p>Instead of searching for jobs, let them search after you</p>
             {props.loggedIn ? (

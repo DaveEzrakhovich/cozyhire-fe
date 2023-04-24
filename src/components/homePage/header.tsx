@@ -9,7 +9,7 @@ interface HeaderProps {
 
 function Header({ loggedIn, onLoginClick, onLogoutClick }: HeaderProps) {
     return (
-        <header className="Header">
+        <header className="header">
             <div className="Header__logo"></div>
             <nav>
                 <ul className="Header__menu">
