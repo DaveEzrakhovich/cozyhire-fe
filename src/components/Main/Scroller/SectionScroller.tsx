@@ -8,39 +8,31 @@ interface SectionScrollerProps {
 }
 
 function SectionScroller(props: SectionScrollerProps) {
+    const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+
+    const handleArrowClick = (index: number) => {
+        setCurrentSectionIndex(index);
+    };
+
     return (
         <div className="section-scroller">
             {props.sections.map((section, index) => (
-                <div key={section.id} className="section-wrapper" id={section.id}>
-                    <section.component />
-                    <div className="arrow-wrapper">
-                        {section.arrowComponents.up && (
-                            <section.arrowComponents.up
-                                id={`${section.id}-up-arrow`}
-                                arrowDirection={ArrowDirection.Up}
-                                onArrowClick={() => {
-                                    if (index > 0) {
-                                        document
-                                            .getElementById(props.sections[index - 1].id)
-                                            ?.scrollIntoView({ behavior: 'smooth' });
-                                    }
-                                }}
-                            />
-                        )}
-                        {section.arrowComponents.down && (
-                            <section.arrowComponents.down
-                                id={`${section.id}-down-arrow`}
-                                arrowDirection={ArrowDirection.Down}
-                                onArrowClick={() => {
-                                    if (index < props.sections.length - 1) {
-                                        document
-                                            .getElementById(props.sections[index + 1].id)
-                                            ?.scrollIntoView({ behavior: 'smooth' });
-                                    }
-                                }}
-                            />
-                        )}
+                <div className="section-wrapper" key={section.id}>
+                    {section.arrowComponents.up && (
+                        <section.arrowComponents.up.icon
+                            className="arrow up"
+                            onClick={() => handleArrowClick(index - 1)}
+                        />
+                    )}
+                    <div className="section" id={section.id}>
+                        {section.component}
                     </div>
+                    {section.arrowComponents.down && (
+                        <section.arrowComponents.down.icon
+                            className="arrow down"
+                            onClick={() => handleArrowClick(index + 1)}
+                        />
+                    )}
                 </div>
             ))}
         </div>
