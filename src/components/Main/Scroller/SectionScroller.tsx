@@ -1,23 +1,26 @@
 import React from 'react';
+import { Section } from '../../../types/Scroller/SectionScroller';
 import SectionArrow from './SectionArrow';
-import {SectionScrollerProps} from "../../../types/Scroller/SectionScroller";
+
+interface SectionScrollerProps {
+    sections: Section[];
+}
 
 function SectionScroller(props: SectionScrollerProps) {
-    const renderSections = () => {
-        return props.sections.map((section) => {
-            return (
+    return (
+        <div className="section-scroller">
+            {props.sections.map((section) => (
                 <div key={section.id}>
-                    <section.sectionComponent />
                     <SectionArrow
-                        direction={section.arrowDirection}
-                        onClick={section.onArrowClick}
+                        id={`${section.id}-arrow`}
+                        arrowDirection={section.arrowDirection}
+                        onArrowClick={section.onArrowClick}
+                        sectionComponent={section.sectionComponent}
                     />
                 </div>
-            );
-        });
-    };
-
-    return <>{renderSections()}</>;
+            ))}
+        </div>
+    );
 }
 
 export default SectionScroller;
