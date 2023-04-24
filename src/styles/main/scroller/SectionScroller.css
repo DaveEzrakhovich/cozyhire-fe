@@ -1,0 +1,32 @@
+.Arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.Arrow--left {
+    left: 0;
+}
+
+.Arrow--right {
+    right: 0;
+}
+
+.Arrow__body {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.Arrow__head {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-left: 8px solid black;
+    border-bottom: 6px solid transparent;
+    transform: translate(-50%, -50%);
+}

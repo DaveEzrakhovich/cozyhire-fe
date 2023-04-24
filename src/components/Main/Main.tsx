@@ -3,8 +3,8 @@ import AboutUsSection from './LandingPage/AboutUsSection';
 import WelcomeSection from './LandingPage/WelcomeSection';
 import AnonymousSection from './LandingPage/AnonymousSection';
 import SectionScroller from './Scroller/SectionScroller';
-import {scrollToElement} from "../../utils/scoll";
-import {Section} from "../../types/Scroller/SectionScroller";
+import {ArrowLeft, ArrowRight} from "./Scroller/SectionArrow";
+import {ArrowDirection} from "../../types/Scroller/SectionArrow";
 
 
 function Main(props: {
@@ -19,38 +19,44 @@ function Main(props: {
         props.onLogoutClick();
     };
 
-    const sections: Section[] = [
-        {
-            id: 'welcome-section',
-            component: (
-                <WelcomeSection
-                    loggedIn={props.loggedIn}
-                    onLoginSuccess={props.onLoginSuccess}
-                    onLoginClick={props.onLoginClick}
-                    onLogoutClick={handleLogoutClick}
-                />
-            ),
-            arrowComponents: {
-                down: <div className="arrow-down" onClick={() => scrollToElement('about-section')}></div>,
-            }
-        },
+    const sections = [{
+        id: 'welcome-section',
+        component: <WelcomeSection
+            loggedIn={props.loggedIn}
+            onLoginSuccess={props.onLoginSuccess}
+            onLoginClick={props.onLoginClick}
+            onLogoutClick={handleLogoutClick}
+        />,
+        arrowComponents: {
+            right: <ArrowRight direction={ArrowDirection.right} onClick={() => {}} />,
+            left: undefined
+        }
+    },
         {
             id: 'anonymous-section',
             component: <AnonymousSection />,
             arrowComponents: {
-                up: <div className="arrow-up" onClick={() => scrollToElement('welcome-section')}></div>,
-                down: <div className="arrow-down" onClick={() => scrollToElement('about-section')}></div>,
+                right: <ArrowRight direction={ArrowDirection.right} onClick={() => {}} />,
+                left: <ArrowLeft direction={ArrowDirection.left} onClick={() => {}}  />
             }
         },
         {
             id: 'about-section',
             component: <AboutUsSection />,
             arrowComponents: {
-                up: <div className="arrow-up" onClick={() => scrollToElement('anonymous-section')}></div>,
-                down: <div className="arrow-down" onClick={() => scrollToElement('contact-us-section')}></div>,
+                right: undefined,
+                left: <ArrowLeft direction={ArrowDirection.left} onClick={() => {}} />
             }
-        },
-    ];
+        }
+    ] as {
+        id: string;
+        component: JSX.Element;
+        arrowComponents: {
+            right?: JSX.Element | undefined;
+            left?: JSX.Element | undefined;
+        };
+    }[];
+
 
 
     return (

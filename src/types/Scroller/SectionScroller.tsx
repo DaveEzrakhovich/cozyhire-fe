@@ -1,16 +1,9 @@
-import { SectionArrow } from "./SectionArrow";
 
 export interface Section {
     id: string;
     component: JSX.Element;
     arrowComponents: {
-        up?: SectionArrow;
-        down?: SectionArrow;
+        left?: JSX.Element;
+        right?: JSX.Element;
     };
-}
-
-
-
-export interface SectionScrollerProps {
-    sections: Section[];
 }

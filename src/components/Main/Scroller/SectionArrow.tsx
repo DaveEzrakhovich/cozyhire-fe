@@ -1,12 +1,17 @@
 import React from 'react';
-import {ArrowDirection, SectionArrowProps} from '../../../types/Scroller/SectionArrow';
-import './SectionArrow.css';
+import '../../../styles/main/scroller/SectionScroller.css'
+import {ArrowDirection, SectionArrowProps} from "../../../types/Scroller/SectionArrow";
 
-function SectionArrow(props: SectionArrowProps) {
-    const arrowClass = `SectionArrow SectionArrow--${props.arrowDirection}`;
+interface ArrowProps {
+    direction: ArrowDirection;
+    onClick: () => void;
+}
+
+function SectionArrow({ id, arrowDirection, onArrowClick }: SectionArrowProps) {
+    const arrowClass = `SectionArrow SectionArrow--${arrowDirection}`;
 
     return (
-        <div id={props.id} className={arrowClass} onClick={props.onArrowClick}>
+        <div id={id} className={arrowClass} onClick={onArrowClick}>
             <div className="SectionArrow__body">
                 <div className="SectionArrow__head" />
             </div>
@@ -15,3 +20,28 @@ function SectionArrow(props: SectionArrowProps) {
 }
 
 export default SectionArrow;
+
+
+const ArrowLeft = (props: ArrowProps) => {
+    const { direction, onClick } = props;
+    return (
+        <div className={`arrow arrow-${direction}`} onClick={onClick}>
+            <div className="arrow-body">
+                <div className="arrow-head" />
+            </div>
+        </div>
+    );
+};
+
+const ArrowRight = (props: ArrowProps) => {
+    const { direction, onClick } = props;
+    return (
+        <div className={`arrow arrow-${direction}`} onClick={onClick}>
+            <div className="arrow-body">
+                <div className="arrow-head" />
+            </div>
+        </div>
+    );
+};
+
+export { ArrowLeft, ArrowRight };
