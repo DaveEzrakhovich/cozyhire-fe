@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import LoginOverlay from '../LoginOverlay';
+import SectionArrow from '../Scroller/SectionArrow';
+import { scrollToElement } from '../../../utils/scoll'
 
 type WelcomeSectionProps = {
     loggedIn: boolean;
     onLoginSuccess: () => void;
     onLoginClick: () => void;
-    onLogoutClick: () => void;
+    onLogoutClick: () => void
 };
 
 function WelcomeSection(props: WelcomeSectionProps) {
@@ -33,6 +35,7 @@ function WelcomeSection(props: WelcomeSectionProps) {
                 onClose={() => setShowLoginOverlay(false)}
                 onLoginSuccess={props.onLoginSuccess}
             />
+            <SectionArrow direction="down" onClick={() => scrollToElement('about-section')} />
         </section>
     );
 }
