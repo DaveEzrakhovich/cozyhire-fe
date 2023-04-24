@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../components/Main/Header';
-import Footer from '../components/Main/Footer';
+import Footer from '../components/homePage/footer';
+import Header from "../components/homePage/header";
 
 function OurMissionPage() {
     return (

@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '../components/Main/Header';
-import Footer from '../components/Main/Footer';
-import LoginOverlay from '../components/Main/LoginOverlay';
-import './LandingPage.css';
+import Header from '../components/homePage/header';
+import Footer from '../components/homePage/footer';
+import LoginOverlay from '../components/homePage/loginOverlay';
+import './landingPage.css';
 
 interface LandingPageProps {
     onLoginClick: () => void;

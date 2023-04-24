@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Header from './components/Main/Header';
-import Main from './components/Main/Main';
-import Footer from './components/Main/Footer';
-import LoginOverlay from './components/Main/LoginOverlay';
+import Header from './components/homePage/header';
+import Main from './components/homePage/main';
+import Footer from './components/homePage/footer';
+import LoginOverlay from './components/homePage/loginOverlay';
 import './styles/global.css';
 
 

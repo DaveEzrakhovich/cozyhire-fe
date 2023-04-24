@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import App from './App';
+import './styles/global.css'
+import App from './app';
 import reportWebVitals from './reportWebVitals';
-import './styles/global.css';
 
 
 const root = ReactDOM.createRoot(

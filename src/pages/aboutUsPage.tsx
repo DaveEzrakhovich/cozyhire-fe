@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../components/Main/Header';
-import Footer from '../components/Main/Footer';
+import Header from '../components/homePage/header';
+import Footer from '../components/homePage/footer';
 
 function AboutUsPage() {
     return (
