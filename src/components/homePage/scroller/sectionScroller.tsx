@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { Section } from '../../../types/scroller/sectionScroller';
 import '../../../styles/main/scroller/sectionScroller.css';
 import { SectionArrow } from "./sectionArrow";
@@ -9,35 +9,50 @@ interface SectionScrollerProps {
 }
 
 const SectionScroller = ({ sections }: SectionScrollerProps) => {
-    const sectionRefs = sections.reduce((acc, section) => {
-        acc[section.id] = React.createRef<HTMLDivElement>();
-        return acc;
-    }, {} as { [key: string]: React.RefObject<HTMLDivElement> });
+    const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+    const sectionContainerRef = useRef<HTMLDivElement>(null);
 
-    const handleArrowClick = (sectionId: string) => {
-        const section = sectionRefs[sectionId].current;
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
+    const handleArrowClick = (direction: 'left' | 'right') => {
+        const maxIndex = sections.length - 1;
+        let newSectionIndex = currentSectionIndex;
+        if (direction === 'left' && currentSectionIndex > 0) {
+            newSectionIndex = currentSectionIndex - 1;
+        } else if (direction === 'right' && currentSectionIndex < maxIndex) {
+            newSectionIndex = currentSectionIndex + 1;
         }
+        setCurrentSectionIndex(newSectionIndex);
     };
+
+    useEffect(() => {
+        if (sectionContainerRef.current) {
+            const sectionWidth = sectionContainerRef.current.clientWidth;
+            sectionContainerRef.current.style.transform = `translateX(-${sectionWidth * currentSectionIndex}px)`;
+        }
+    }, [currentSectionIndex]);
 
     return (
         <div className="section-scroller">
+            <div className="section-container" ref={sectionContainerRef}>
+                {sections.map((section, index) => (
+                    <div key={index} className="section-content">
+                        {section.component}
+                    </div>
+                ))}
+            </div>
             {sections.map((section, index) => (
-                <div key={index} id={section.id} ref={sectionRefs[section.id]}>
-                    {section.arrowComponents?.left && (
+                <div key={index} className="section-arrow-container">
+                    {index > 0 && (
                         <SectionArrow
                             id={`${section.id}-arrow-left`}
                             arrowDirection={ArrowDirection.left}
-                            onArrowClick={() => handleArrowClick(sections[index - 1].id)}
+                            onArrowClick={() => handleArrowClick('left')}
                         />
                     )}
-                    {section.component}
-                    {section.arrowComponents?.right && (
+                    {index < sections.length - 1 && (
                         <SectionArrow
                             id={`${section.id}-arrow-right`}
                             arrowDirection={ArrowDirection.right}
-                            onArrowClick={() => handleArrowClick(sections[index + 1].id)}
+                            onArrowClick={() => handleArrowClick('right')}
                         />
                     )}
                 </div>
@@ -45,5 +60,6 @@ const SectionScroller = ({ sections }: SectionScrollerProps) => {
         </div>
     );
 };
+
 
 export default SectionScroller;

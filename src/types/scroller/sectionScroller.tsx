@@ -1,9 +1,11 @@
+import React from "react";
 
 export interface Section {
     id: string;
-    component: JSX.Element;
-    arrowComponents: {
-        left?: JSX.Element;
-        right?: JSX.Element;
+    component: React.ReactNode;
+    arrowComponents?: {
+        left?: React.ReactNode;
+        right?: React.ReactNode;
     };
+    visible: boolean;
 }

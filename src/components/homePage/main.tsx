@@ -9,6 +9,7 @@ import { ArrowDirection } from "../../types/scroller/sectionArrow";
 import '../../styles/main.css';
 import '../../styles/main/scroller/sectionArrow.css';
 import '../../styles/main/scroller/sectionScroller.css';
+import {Section} from "../../types/scroller/sectionScroller";
 
 function Main(props: {
     loggedIn: boolean;
@@ -22,7 +23,7 @@ function Main(props: {
         props.onLogoutClick();
     };
 
-    const sections = [
+    const sections: Section[] = [
         {
             id: 'welcome-section',
             component: <WelcomeSection
@@ -34,7 +35,8 @@ function Main(props: {
             arrowComponents: {
                 right: <ArrowRight direction={ArrowDirection.right} onClick={() => {}} />,
                 left: undefined
-            }
+            },
+            visible: true
         },
         {
             id: 'anonymous-section',
@@ -42,7 +44,8 @@ function Main(props: {
             arrowComponents: {
                 right: <ArrowRight direction={ArrowDirection.right} onClick={() => {}} />,
                 left: <ArrowLeft direction={ArrowDirection.left} onClick={() => {}}  />
-            }
+            },
+            visible: false
         },
         {
             id: 'about-section',
@@ -50,16 +53,10 @@ function Main(props: {
             arrowComponents: {
                 right: undefined,
                 left: <ArrowLeft direction={ArrowDirection.left} onClick={() => {}} />
-            }
+            },
+            visible: false
         }
-    ] as {
-        id: string;
-        component: JSX.Element;
-        arrowComponents: {
-            right?: JSX.Element | undefined;
-            left?: JSX.Element | undefined;
-        };
-    }[];
+    ]
 
 
 
