@@ -64,7 +64,7 @@ function Main(props: {
 
 
     return (
-        <main>
+        <main className="mainContainer">
             <SectionScroller sections={sections} />
         </main>
     );

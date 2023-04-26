@@ -2,7 +2,11 @@
 
 main {
     background-color: #f2f2f2;
-    height: 80%;
-    padding: 20px;
+    height: calc(100vh - var(--header-height) - var(--footer-height));
+    padding: 10px;
     border: 1px solid black;
+}
+
+.mainContainer {
+    height: calc(100vh - var(--header-height) - var(--footer-height));
 }
